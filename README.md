@@ -3,7 +3,7 @@
 Hi there, 
 
 this repository represents my earliest attempt in scripting with bash, and programming at all.
-So if there're a few things over the top, it's because I'm just wanted to try something new. (like using github)
+So if there're a few things over the top, it's because I just wanted to try something new. (like using github)
 
 I intendet it as a terminal intro, when you ssh into a server, for example.
 
