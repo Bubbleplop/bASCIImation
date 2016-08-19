@@ -1,9 +1,9 @@
 #!/bin/bash
 
-source Rocketship.sh
-#source Walfish.sh
-source set_values.sh
-source drawbox.sh
+source Rocketship
+#source Walfish
+source set_values
+source drawbox
 
 play_animation () {
 
