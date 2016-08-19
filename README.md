@@ -27,4 +27,4 @@ change to bASCIImation directory and run
 ```
 ./intro.sh -c "Hi $USER"
 ```
-alternatively you can add -i flag to show some debug info
+alternatively you can add the `-i` flag to show some debug info
