@@ -54,14 +54,14 @@ fi
 if (($terminal_width < $movie_width && (($terminal_width%2 || $movie_width%2)) ))&&(( ! (( $terminal_height%2 && $movie_height%2 )) ))
 then
 	let "crop_left=($movie_width-$terminal_width)/2"
-	let "crop_right=(($movie_width-$terminal_width)/2+$terminal_width)+($movie_width%2)+($terminal_width%2)"
+	let "crop_right=(($movie_width-$terminal_width)/2+$terminal_width)+($movie_width%2)+($terminal_width%2)-4"
 	expand_left=0
 	expand_right=0
 	case_x=1
 elif (($terminal_width < $movie_width))
 then
 	let "crop_left=($movie_width-$terminal_width)/2"
-	let "crop_right=(($movie_width-$terminal_width)/2+$terminal_width-3)"
+	let "crop_right=(($movie_width-$terminal_width)/2+$terminal_width-2)"
 	expand_left=0
 	expand_right=0
 	case_x=2
