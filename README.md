@@ -14,7 +14,7 @@ Also it uses the programm Figlet to play a message in the last few frames, which
 
 it was a lot of fun to build, and there is probably coming more.
 
-### what it does not
+### what it does not:
 
 I'm eager to implement something that plays the video and than restores the terminal as it was, like "less" does, or "vim", if this is even posible in a scipt.
 then, it should run the video directly from a viedeo-container like avi,.. 
