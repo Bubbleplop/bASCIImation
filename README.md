@@ -24,5 +24,7 @@ at some point I will rebuild this in c++, and whatever I'll be on to after that.
 ### How to use:
 
 change to bASCIImation directory and run 
->./intro.sh -c "Hi $USER"
+```
+./intro.sh -c "Hi $USER"
+```
 alternatively you can add -i flag to show some debug info
