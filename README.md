@@ -31,4 +31,4 @@ alternatively you can add the `-i` flag to show some debug info
 
 
 heres a preview:
-[![asciicast](https://asciinema.org/a/1xiz4pr48wvcl8vhlmibiypcw.png)](https://asciinema.org/a/1xiz4pr48wvcl8vhlmibiypcw)
+[![asciicast](https://asciinema.org/a/1xiz4pr48wvcl8vhlmibiypcw.png)](https://asciinema.org/a/1xiz4pr48wvcl8vhlmibiypcw?theme=solarized-light)
