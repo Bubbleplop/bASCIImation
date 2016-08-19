@@ -28,3 +28,7 @@ change to bASCIImation directory and run
 ./intro.sh -c "Hi $USER"
 ```
 alternatively you can add the `-i` flag to show some debug info
+
+
+heres a preview:
+[![asciicast](https://asciinema.org/a/1xiz4pr48wvcl8vhlmibiypcw.png)](https://asciinema.org/a/1xiz4pr48wvcl8vhlmibiypcw)
