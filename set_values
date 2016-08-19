@@ -61,7 +61,7 @@ then
 elif (($terminal_width < $movie_width))
 then
 	let "crop_left=($movie_width-$terminal_width)/2"
-	let "crop_right=(($movie_width-$terminal_width)/2+$terminal_width)"
+	let "crop_right=(($movie_width-$terminal_width)/2+$terminal_width-3)"
 	expand_left=0
 	expand_right=0
 	case_x=2
