@@ -25,6 +25,6 @@ Next thing to would be a fallback for figlet, so it doesn't need to be installed
 
 change to bASCIImation directory and run 
 ```
-./intro.sh -c "Hi $USER"
+./play.sh -c "Hi $USER"
 ```
 alternatively you can add the `-i` flag to show some debug info
