@@ -9,17 +9,18 @@ I intendet it as a terminal intro, when you ssh into a server, for example.
 
 ### What it does:
 
-The script plays prepared ASCII-videos, mostly blender-animations, in a terminal, running bash. It also draws a box around the video, which is resizing automaticly when the terminal changes its propotions.
+The script plays prepared ASCII-videos, mostly blender-animations, in a terminal, running bash. 
+It also draws a box around the video, which is resizing automaticly when the terminal changes its propotions. 
 Also it uses the programm Figlet to play a message in the last few frames, which you can define via option-switch parsing.
 
-it was a lot of fun to build, and there is probably coming more.
+it was a lot of fun to build, and will be by expanding it bit by bit.
 
 ### What it does not:
 
 ~~I'm eager to implement something that plays the video and than restores the terminal as it was, like "less" does, or "vim", if this is even posible in a scipt.~~
 As it turns out, this was quite simple. As statet at [Stack Overflow](http://stackoverflow.com/questions/39065430/bash-reset-terminal-output-as-it-was-before) .. love this site.
 
-Next thing to would be a fallback for figlet, so it doesn't need to be installed. 
+Next thing would be a fallback for figlet, so it doesn't need to be installed. 
 
 ### How to use:
 
