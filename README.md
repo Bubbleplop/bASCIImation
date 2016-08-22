@@ -16,7 +16,7 @@ it was a lot of fun to build, and there is probably coming more.
 
 ### What it does not:
 
-~~ I'm eager to implement something that plays the video and than restores the terminal as it was, like "less" does, or "vim", if this is even posible in a scipt. ~~
+~~I'm eager to implement something that plays the video and than restores the terminal as it was, like "less" does, or "vim", if this is even posible in a scipt.~~
 As it turns out, this was quite simple. As statet at [Stack Overflow](http://stackoverflow.com/questions/39065430/bash-reset-terminal-output-as-it-was-before) .. love this site.
 
 Next thing to would be a fallback for figlet, so it doesn't need to be installed. 
