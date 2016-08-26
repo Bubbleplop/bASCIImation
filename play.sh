@@ -157,6 +157,7 @@ get_option_switch "$@" # Get parameters, the scripts has startet with.
 set_values # initializing Variables, this will also called when resizing the window while playing, to reset them all.
 tput smcup # setting Terminal to alternate screen mode
 setterm -cursor off # disable cursor blinking
+printf '\e[48;5;255m'; printf '\e[38;5;0m'
 clear_expanded_lines # Clear the blank lines between boarders
 drawbox 0.003 0.024 # calling drawbox, the parameters are for the delay, in horizontal and vertikal drawing.
 play_animation # Play the movie
