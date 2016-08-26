@@ -1,18 +1,31 @@
 #!/bin/bash
 
+trap 'exit_script' INT SIGTERM
+
 source Rocketship
 #source Walfish
 source set_values
 source drawbox
 
-play_animation () {
+get_option_switch () { # Get parameters, the scripts has startet with.
+while getopts "c:i" Option
+do
+	case $Option in
+		c) credits_text=$OPTARG;;
+		i) give_information_please=1;;
+#		*) credits_text="This is an Example Credit";;
+	esac
+done
+shift $(($OPTIND - 1))
+}
 
+play_animation () {
 for ((current_frame=0; current_frame<=$[$frames-1]; current_frame++))
 do
-	if (( $(tput cols) != $terminal_width ))||(( $(tput lines) != $terminal_height ))
+	if (( $(tput cols) != $terminal_width ))||(( $(tput lines) != $terminal_height )) # If user resizes the Terminal, reset the Parameters
 	then
 		clear
-		sleep 0.7
+		sleep 0.7 # short delay, to avoid fragments while draging terminal boarders
 		set_values
 		clear_expanded_lines
 		drawbox_quick
@@ -48,28 +61,28 @@ do
 			echo "$output" | cut -c3-$terminal_width
 		fi
 	done
-	
+	if (($give_information_please))
+	then
+		infobox
+	fi
 	sleep 0.035
 done
-#clear
 if (($give_information_please))
 then
 	infobox
+	read
 fi
 }
 
 credits () {
-
 j=0
 while IFS= read -r; do
 	credit[$j]=$REPLY
 	let "j++"
-#	tput cuf $[$thick_horizontal_middle-(${#line}/2+(${#line}%2))]; echo "$line" 
 done < <(figlet -w $terminal_width "$credits_text"; echo)
 }
 
 clear_expanded_lines () {
-
 if (($expand_top > 2))
 then
 	echo -en "\033[1;1H"
@@ -93,10 +106,7 @@ then
 fi
 }
 
-# Some informations for debug
-
-infobox () {
-
+infobox () { # found out about the trap command, so this is going to be reworked
 echo -en "\033[s"
 echo -en "\033[2;1H"
 
@@ -117,7 +127,7 @@ echo -e "\033[1CCredit Text is: $credits_text"
 #echo -e "\033[1Cthin_vertical_middle: $thin_vertical_middle, thin_horizontal_middle: $thin_horizontal_middle"
 }
 
-test_drawbox () { # just a small debug function, can be deletet later.
+test_drawbox () { # just a small debug function, can be deleted later.
 clear
 set_values
 clear_expanded_lines
@@ -136,22 +146,19 @@ while :; do
 done
 }
 
-while getopts "c:i" Option # I would love to put this in a function, but for some reason this isn't working.
-do
-	case $Option in
-		c) credits_text=$OPTARG;;
-		i) give_information_please=1;;
-		*) credits_text="This is an Example Credit";;
-	esac
-done
-shift $(($OPTIND - 1))
+exit_script () { # If user trys to quit, reset screen and exit
+setterm -cursor on
+tput rmcup
+exit
+}
 
 #test_drawbox
+get_option_switch "$@" # Get parameters, the scripts has startet with.
 set_values # initializing Variables, this will also called when resizing the window while playing, to reset them all.
 tput smcup # setting Terminal to alternate screen mode
 setterm -cursor off # disable cursor blinking
 clear_expanded_lines # Clear the blank lines between boarders
-drawbox 0.0031 0.0041 # calling drawbox, the parameters are for the delay, in horizontal and vertikal drawing.
+drawbox 0.003 0.024 # calling drawbox, the parameters are for the delay, in horizontal and vertikal drawing.
 play_animation # Play the movie
 setterm -cursor on # enable cursor blinking
 tput rmcup # returning from alternate screen
