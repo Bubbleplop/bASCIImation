@@ -18,8 +18,8 @@ do
 done
 shift $(($OPTIND - 1))
 }
-
-play_animation () {
+ 
+play_animation () { # not only plays the Movie-Array, its also tests if the terminal is getting resized.
 for ((current_frame=0; current_frame<=$[$frames-1]; current_frame++))
 do
 	if (( $(tput cols) != $terminal_width ))||(( $(tput lines) != $terminal_height )) # If user resizes the Terminal, reset the Parameters
@@ -157,7 +157,7 @@ get_option_switch "$@" # Get parameters, the scripts has startet with.
 set_values # initializing Variables, this will also called when resizing the window while playing, to reset them all.
 tput smcup # setting Terminal to alternate screen mode
 setterm -cursor off # disable cursor blinking
-printf '\e[48;5;255m'; printf '\e[38;5;0m'
+printf '\e[48;5;255m'; printf '\e[38;5;0m' # Set Terminal Colors. This is a temporary Solution, by the way.
 clear_expanded_lines # Clear the blank lines between boarders
 drawbox 0.003 0.024 # calling drawbox, the parameters are for the delay, in horizontal and vertikal drawing.
 play_animation # Play the movie
